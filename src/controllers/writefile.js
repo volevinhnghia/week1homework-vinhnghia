@@ -14,5 +14,5 @@ const writeFileJSON = (req, res) => {
   });
 };
 module.exports = {
-    writeFileJSON
-}
+  writeFileJSON,
+};
