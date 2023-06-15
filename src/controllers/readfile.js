@@ -11,23 +11,29 @@ const readFileJSONFillByCountry = (req, res) => {
   countryFilltered.map((year) => {
     for (const props in year.children) {
       for (const nextProps in year.children[props].children) {
-        for (const nextNextProps in year.children[props].children[nextProps].children) {
-          console.log(
-            year.children[props].children[nextProps].children[nextNextProps].country
-          );
-          for (const countryProps in year.children[props].children[nextProps].children[nextNextProps].country){
-            if (year.children[props].children[nextProps].children[nextNextProps].country[countryProps] === req.params.country ) {
-                console.log(year.children[props].children[nextProps].children[nextNextProps]);
-            }
-            console.log(year.children[props].children[nextProps].children[nextNextProps].country[countryProps]);
+        for (const nextNextProps in year.children[props].children[nextProps]
+          .children) {
+          // console.log(
+          //   year.children[props].children[nextProps].children[nextNextProps].country
+          // );
+          //console.log(year.children[props].children[nextProps].children[nextNextProps].country === req.params.country);
+
+          if (
+            year.children[props].children[nextProps].children[nextNextProps]
+              .country === req.params.country
+          ) {
+            //console.log(year.children[props].children[nextProps].children[nextNextProps]);
+            result.push(
+              year.children[props].children[nextProps].children[nextNextProps]
+            );
           }
-          
+          //console.log(year.children[props].children[nextProps].children[nextNextProps].country);
         }
       }
     }
+    console.log(req.params.country);
     console.log(result);
-    res.json(year.children);
-    console.log(performance.now());
+    res.json(result);
   });
   //   for (const props in countryFilltered) {
   //     console.log(countryFilltered[props]);
