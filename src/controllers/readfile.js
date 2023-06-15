@@ -15,10 +15,11 @@ const readFileJSONFillByCountry = (req, res) => {
           console.log(
             year.children[props].children[nextProps].children[nextNextProps].country
           );
-          for (const countryProps in year.children[props].children[nextProps].children.country){
+          for (const countryProps in year.children[props].children[nextProps].children[nextNextProps].country){
             if (year.children[props].children[nextProps].children[nextNextProps].country[countryProps] === req.params.country ) {
-                result.push(year.children[props].children[nextProps].children[nextNextProps]);
+                console.log(year.children[props].children[nextProps].children[nextNextProps]);
             }
+            console.log(year.children[props].children[nextProps].children[nextNextProps].country[countryProps]);
           }
           
         }

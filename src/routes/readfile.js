@@ -6,6 +6,6 @@ const readFileControllers = require('../controllers/readfile');
 
 
 router.get('/file', readFileControllers.readFileJSON);
-router.get('/file/:country', readFileControllers.readFileJSONFillByCountry);
+router.get('/filee', readFileControllers.readFileJSONFillByCountry);
 
 module.exports = router;
