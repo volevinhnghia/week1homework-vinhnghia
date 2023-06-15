@@ -3,6 +3,6 @@ const router = express.Router();
 const writeFileControllers = require('../controllers/writefile');
 
 
-router.post('/writefile',writeFileControllers.writeFileJSON);
+router.post('/file',writeFileControllers.writeFileJSON);
 
 module.exports = router;
