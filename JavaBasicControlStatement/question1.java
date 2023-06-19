@@ -16,11 +16,6 @@ public class question1 {
     }
 
     public static void main(String[] args) {
-        question1.evaluate(90);
-        question1.evaluate(70);
-        question1.evaluate(50);
-        question1.evaluate(30);
-        question1.evaluate(10);
-        question1.evaluate(120);
+        question1.evaluate(Integer.parseInt(args[0]));
     }
 }
