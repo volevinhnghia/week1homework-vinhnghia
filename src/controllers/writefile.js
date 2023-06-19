@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const writeFileJSON = (req, res) => {
+const writeFileJSON = (req, res) => { // write all data from body to output.json file with /file api
   const data = req.body;
   const filePath = __dirname + "/output.json";
 

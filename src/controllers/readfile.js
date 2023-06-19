@@ -3,9 +3,9 @@ const filePath = __dirname + "/output.json";
 
 const jsonFile = require(filePath);
 const readFileJSON = (req, res) => {
-  res.json(jsonFile);
+  res.json(jsonFile); // Read json file with api /file
 };
-const readFileJSONFillByCountry = (req, res) => {
+const readFileJSONFillByCountry = (req, res) => { // find all country with params country
   let countryFilltered = jsonFile.children;
   const result = [];
   countryFilltered.map((year) => {
