@@ -5,9 +5,27 @@ import java.util.List;
 public class Inventory {
     HashMap<String, List<Product>> products = new HashMap<>();
     void put(Product product){
-        List<Product> listOfProducts = new ArrayList<>(products.get(product.name));
-        listOfProducts.add(product);
-        System.out.println(products.get(product.name));
-        System.out.println(listOfProducts);
+        if (products.containsKey(product.name)) {
+            products.get(product.name).add(product);
+        }else{
+            products.put(product.name, new ArrayList<>(List.of(product)));
+        }
     }
+    List<Product> getProduct(String name){
+        return products.get(name);
+    } 
+    void removeProduct(String name){
+        products.remove(name);
+    }
+    double totalPrice(String name){
+        double total = 0;
+        for (Product product : products.get(name)) {
+            total += product.price;
+        }
+        return total;
+    }
+    int totalCount(String name){
+        return products.get(name).size();
+    }
+
 }
